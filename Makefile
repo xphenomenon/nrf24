@@ -9,7 +9,8 @@ CFLAGS_nrf24_if.o := -DDEBUG
 CFLAGS_nrf24_hal.o := -DDEBUG
 CFLAGS_nrf24_sysfs.o := -DDEBUG
 
-KERNEL_DIR ?= ../linux
+# KERNEL_DIR ?= ../linux
+KERNEL_DIR := /lib/modules/$(shell uname -r)/build
 
 all:
 	make -C $(KERNEL_DIR) M=$(PWD) modules
